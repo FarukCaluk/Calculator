@@ -1,36 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="calculator">
-         <input id="konj" readonly>
-         <div id="keys">
-            <button onclick="dodajNaDispley('+')" class="operacija-btn">+</button>
-            <button onclick="dodajNaDispley('7')">7</button>
-            <button onclick="dodajNaDispley('8')">8</button>
-            <button onclick="dodajNaDispley('9')">9</button>
-            <button onclick="dodajNaDispley('-')" class="operacija-btn">-</button>
-            <button onclick="dodajNaDispley('4')">4</button>
-            <button onclick="dodajNaDispley('5')">5</button>
-            <button onclick="dodajNaDispley('6')">6</button>
-            <button onclick="dodajNaDispley('*')" class="operacija-btn">*</button>
-            <button onclick="dodajNaDispley('1')">1</button>
-            <button onclick="dodajNaDispley('2')">2</button>
-            <button onclick="dodajNaDispley('3')">3</button>
-            <button onclick="dodajNaDispley('/')" class="operacija-btn">/</button>
-            <button onclick="dodajNaDispley('0')">0</button>
-            <button onclick="dodajNaDispley('.')">.</button>
-            <button onclick="Racunaj()">=</button>
-            <button onclick="obrisiDispley()" class="operacija-btn" >C</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="sr-only">Calculator</h1>
 
-         </div>
+      <section class="calculator" aria-label="Calculator">
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <div id="expression" class="expression">&nbsp;</div>
+          <input
+            id="display"
+            class="value"
+            type="text"
+            readonly
+            inputmode="decimal"
+            aria-label="Display"
+            value="0"
+          />
+        </div>
 
-    </div>
+        <div class="keys" role="group" aria-label="Calculator keys">
+          <button
+            type="button"
+            class="key key--action"
+            data-action="clear"
+            aria-label="Clear"
+          >
+            C
+          </button>
+          <button
+            type="button"
+            class="key key--action"
+            data-action="backspace"
+            aria-label="Backspace"
+          >
+            ⌫
+          </button>
+          <button
+            type="button"
+            class="key key--action"
+            data-action="percent"
+            aria-label="Percent"
+          >
+            %
+          </button>
+          <button
+            type="button"
+            class="key key--op"
+            data-value="/"
+            aria-label="Divide"
+          >
+            ÷
+          </button>
+
+          <button type="button" class="key" data-value="7">7</button>
+          <button type="button" class="key" data-value="8">8</button>
+          <button type="button" class="key" data-value="9">9</button>
+          <button
+            type="button"
+            class="key key--op"
+            data-value="*"
+            aria-label="Multiply"
+          >
+            ×
+          </button>
+
+          <button type="button" class="key" data-value="4">4</button>
+          <button type="button" class="key" data-value="5">5</button>
+          <button type="button" class="key" data-value="6">6</button>
+          <button
+            type="button"
+            class="key key--op"
+            data-value="-"
+            aria-label="Minus"
+          >
+            −
+          </button>
+
+          <button type="button" class="key" data-value="1">1</button>
+          <button type="button" class="key" data-value="2">2</button>
+          <button type="button" class="key" data-value="3">3</button>
+          <button
+            type="button"
+            class="key key--op"
+            data-value="+"
+            aria-label="Plus"
+          >
+            +
+          </button>
+
+          <button type="button" class="key key--zero" data-value="0">0</button>
+          <button type="button" class="key" data-value=".">.</button>
+          <button
+            type="button"
+            class="key key--equal"
+            data-action="equals"
+            aria-label="Equals"
+          >
+            =
+          </button>
+        </div>
+      </section>
+    </main>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
